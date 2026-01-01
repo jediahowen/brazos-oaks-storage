@@ -65,11 +65,12 @@ export function Nav() {
       </div>
 
       <div
-        className={`md:hidden fixed inset-0 top-16 bg-background z-40 transition-transform duration-300 ${
+        className={`md:hidden fixed inset-0 top-16 bg-background border-t border-border z-40 transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{ backgroundColor: 'hsl(var(--background))' }}
       >
-        <div className="flex flex-col p-6 gap-2">
+        <div className="flex flex-col p-6 gap-2 bg-background min-h-full">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)}>
               <Button
