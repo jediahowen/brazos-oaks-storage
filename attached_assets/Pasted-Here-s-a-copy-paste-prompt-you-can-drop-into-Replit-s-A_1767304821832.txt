@@ -1,0 +1,74 @@
+Here’s a copy/paste prompt you can drop into Replit’s AI (or any coding assistant) to generate a fast, lightweight React site for your storage business, hosted as static files on Bluehost, with FAQ, Home, Unit Sizing, About, ad pixels via GTM, and your booking snippet embed.
+
+⸻
+
+PROMPT (paste into Replit):
+
+Build a lightweight, fast-loading marketing website for my small self-storage business using React + Vite (JavaScript). The site must be easy to deploy as static files to Bluehost shared hosting (upload the Vite dist/ output to public_html). Prioritize performance and minimal dependencies.
+
+Core requirements
+	1.	Pages (use React Router):
+
+	•	/ Home
+	•	/unit-sizes Unit Sizing
+	•	/faq FAQ
+	•	/about About Us
+	•	/rent Rent / Reserve page (contains my booking embed snippet)
+	•	/contact Contact (simple contact info + optional form)
+
+	2.	Design/UI:
+
+	•	Clean, modern, professional, trustworthy look for a storage facility.
+	•	Mobile-first and responsive.
+	•	Keep CSS lightweight (plain CSS or CSS modules; avoid heavy UI frameworks).
+	•	Include a simple top nav + footer.
+	•	Clear CTA buttons (“Reserve a Unit”, “Call Now”, “Get Directions”).
+
+	3.	Performance:
+
+	•	Minimal JS shipped per page.
+	•	Lazy-load the booking embed (only load it on the /rent page, and ideally load it on button click).
+	•	Use basic best practices: semantic HTML, accessible nav, good heading structure.
+	•	Add a simple SEO component that sets document.title and meta description per route.
+
+	4.	Tracking / pixels:
+
+	•	Implement Google Tag Manager support via an environment variable:
+	•	VITE_GTM_ID=GTM-XXXXXXX
+	•	If VITE_GTM_ID is set, inject the GTM script into <head> at runtime.
+	•	Create a small utility trackEvent(name, params) that pushes to window.dataLayer.
+	•	Track these events:
+	•	cta_click when user clicks “Reserve a Unit” buttons
+	•	rent_embed_loaded when the booking snippet is inserted/loaded
+	•	contact_submit if a contact form is submitted (if you include a form)
+
+	5.	Booking embed snippet:
+
+	•	On /rent, include a placeholder constant BOOKING_SNIPPET_HTML where I can paste my provider’s snippet.
+	•	Provide a safe way to inject it (e.g., dangerouslySetInnerHTML) but only in that dedicated component.
+	•	Add a “Load Reservation Tool” button; clicking it should mount the embed and then fire rent_embed_loaded.
+	•	Also provide a normal external link button (in case embed fails).
+
+Content (use placeholders)
+	•	Business name: “Brazos Oaks Storage”
+	•	Location: Waco / Elm Mott, Texas (use placeholder address text)
+	•	Phone: placeholder like (254) 744-5127
+	•	Add typical storage features bullets: secure access, cameras, clean units, wide driveways, convenient access, month-to-month rentals, etc.
+	•	Unit sizing page should include common sizes (5x5, 5x10, 10x10, 10x15, 10x20) and “what fits” descriptions.
+
+Project structure
+	•	src/pages/* for pages
+	•	src/components/* for shared components (Nav, Footer, SEO, CTAButton)
+	•	src/lib/analytics.js for GTM + tracking
+	•	src/lib/bookingSnippet.js for the snippet constant
+	•	src/styles/* for CSS modules or plain CSS
+
+Deliverables
+	•	Provide the full code for all files.
+	•	Include clear instructions:
+	•	how to run locally (npm install, npm run dev)
+	•	how to build (npm run build)
+	•	what folder to upload to Bluehost (dist/)
+	•	Add a note about React Router static hosting: configure it to use hash routing (HashRouter) so refresh/deep links work on Bluehost without server rewrites.
+
+Start by creating the full Vite + React project code. Use JavaScript (not TypeScript). Avoid unnecessary dependencies.
