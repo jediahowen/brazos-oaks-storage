@@ -13,6 +13,7 @@ import FAQ from "@/pages/FAQ";
 import About from "@/pages/About";
 import Rent from "@/pages/Rent";
 import Contact from "@/pages/Contact";
+import Login from "@/pages/Login";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/rent" component={Rent} />
       <Route path="/contact" component={Contact} />
+      <Route path="/login" component={Login} />
       <Route component={NotFound} />
     </Switch>
   );
