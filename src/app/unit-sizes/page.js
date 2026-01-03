@@ -54,7 +54,7 @@ export default function UnitSizes() {
             Our team is available to help you select the perfect unit size. We can even show you available units in person before you commit.
           </p>
           <div className={styles.ctaButtons}>
-            <CTAButton href="/rent/">Reserve a Unit Now</CTAButton>
+            <CTAButton href="https://www.brazosoaksstorage.com/sites">Reserve a Unit Now</CTAButton>
             <CTAButton href="/contact/" variant="secondary">
               Contact Us
             </CTAButton>

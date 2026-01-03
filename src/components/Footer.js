@@ -4,7 +4,7 @@ import styles from './Footer.module.css';
 const quickLinks = [
   { href: '/', label: 'Home' },
   { href: '/unit-sizes/', label: 'Unit Sizes' },
-  { href: '/rent/', label: 'Reserve Online' },
+  { href: 'https://www.brazosoaksstorage.com/sites', label: 'Reserve Online' },
   { href: '/faq/', label: 'FAQ' },
   { href: '/about/', label: 'About Us' },
   { href: '/contact/', label: 'Contact' },
@@ -70,13 +70,30 @@ export default function Footer() {
           <div>
             <h3 className={styles.sectionTitle}>Quick Links</h3>
             <ul className={styles.links}>
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className={styles.link}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {quickLinks.map((link) => {
+                const isExternal = link.href.startsWith('http');
+                if (isExternal) {
+                  return (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className={styles.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  );
+                }
+                return (
+                  <li key={link.href}>
+                    <Link href={link.href} className={styles.link}>
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

@@ -27,7 +27,7 @@ export default function Home() {
             Conveniently located in Elm Mott, Texas. Drive-up access, 24/7 gate entry, and flexible month-to-month rentals for all your storage needs.
           </p>
           <div className={styles.heroButtons}>
-            <CTAButton href="/rent/" size="lg">
+            <CTAButton href="https://www.brazosoaksstorage.com/sites" size="lg">
               Reserve a Unit
             </CTAButton>
             <CTAButton href="tel:+12547445127" variant="phone" size="lg">
@@ -77,7 +77,7 @@ export default function Home() {
             Reserve your unit online in minutes or give us a call. We're here to help you find the perfect storage solution.
           </p>
           <div className={styles.ctaButtons}>
-            <CTAButton href="/rent/" variant="secondary" size="lg" className={styles.ctaButtonWhite}>
+            <CTAButton href="https://www.brazosoaksstorage.com/sites" variant="secondary" size="lg" className={styles.ctaButtonWhite}>
               Reserve Online Now
             </CTAButton>
             <CTAButton href="/unit-sizes/" variant="outline" size="lg" className={styles.ctaButtonOutline}>

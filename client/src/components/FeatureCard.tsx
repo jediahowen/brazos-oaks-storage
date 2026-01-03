@@ -32,3 +32,6 @@ export function FeatureCard({ feature }: FeatureCardProps) {
     </Card>
   );
 }
+
+export default FeatureCard;
+

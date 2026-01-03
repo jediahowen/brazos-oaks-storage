@@ -19,20 +19,21 @@ export default function BookingEmbed() {
         <div className={styles.placeholder}>
           <h3 className={styles.placeholderTitle}>Reserve Your Storage Unit</h3>
           <p className={styles.placeholderText}>
-            Click the button below to load our reservation tool and check availability in real-time.
+            Check availability, view pricing, and reserve your unit online. Click below to get started!
           </p>
           <div className={styles.buttons}>
-            <button onClick={handleLoad} className={styles.loadButton}>
-              Load Reservation Tool
-            </button>
             <a
               href={EXTERNAL_BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.externalButton}
+              onClick={() => trackRentEmbedLoaded()}
             >
-              Open in New Window
+              Reserve Online Now
             </a>
+            <button onClick={handleLoad} className={styles.loadButton}>
+              Load Reservation Tool
+            </button>
           </div>
         </div>
       ) : (

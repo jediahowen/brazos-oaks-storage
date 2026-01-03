@@ -48,7 +48,7 @@ export default function Nav() {
           </div>
 
           <div className={styles.desktopCTA}>
-            <CTAButton href="/rent/">Reserve a Unit</CTAButton>
+            <CTAButton href="https://www.brazosoaksstorage.com/sites">Reserve a Unit</CTAButton>
           </div>
 
           <button
@@ -85,7 +85,7 @@ export default function Nav() {
             </Link>
           ))}
           <div className={styles.mobileCTA}>
-            <CTAButton href="/rent/" onClick={() => setIsOpen(false)}>
+            <CTAButton href="https://www.brazosoaksstorage.com/sites" onClick={() => setIsOpen(false)}>
               Reserve a Unit
             </CTAButton>
           </div>

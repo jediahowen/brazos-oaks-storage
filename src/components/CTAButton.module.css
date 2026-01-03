@@ -29,43 +29,46 @@
 
 /* Variants */
 .primary {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background: hsl(var(--color-cta));
+  color: hsl(0 0% 100%);
 }
 
 .primary:hover {
-  opacity: 0.9;
+  background: hsl(var(--color-cta-hover));
 }
 
 .secondary {
-  background: hsl(var(--secondary));
-  color: hsl(var(--secondary-foreground));
-  border-color: hsl(var(--border));
+  background: hsl(var(--color-cta-secondary));
+  color: hsl(0 0% 100%);
+  border-color: hsl(var(--color-cta-secondary));
 }
 
 .secondary:hover {
-  background: hsl(var(--accent));
+  background: hsl(var(--color-cta-secondary-hover));
+  border-color: hsl(var(--color-cta-secondary-hover));
 }
 
 .outline {
   background: transparent;
-  color: hsl(var(--foreground));
-  border-color: hsl(var(--border));
+  color: hsl(var(--color-primary));
+  border-color: hsl(var(--color-primary));
 }
 
 .outline:hover {
-  background: hsl(var(--accent));
+  background: hsl(var(--color-primary));
+  color: hsl(0 0% 100%);
 }
 
 .phone,
 .directions {
   background: transparent;
-  color: hsl(var(--foreground));
-  border-color: hsl(var(--border));
+  color: hsl(var(--color-cta-secondary));
+  border-color: hsl(var(--color-cta-secondary));
 }
 
 .phone:hover,
 .directions:hover {
-  background: hsl(var(--accent));
+  background: hsl(var(--color-cta-secondary));
+  color: hsl(0 0% 100%);
 }
 

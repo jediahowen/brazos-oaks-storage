@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { trackCTAClick } from "@/lib/analytics";
-import { Link } from "wouter";
+import Link from "next/link";
 import { Phone, MapPin, ArrowRight } from "lucide-react";
 
 interface CTAButtonProps {

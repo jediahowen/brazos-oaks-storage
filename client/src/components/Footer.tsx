@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, Warehouse } from "lucide-react";
 
 const quickLinks = [
@@ -105,3 +105,6 @@ export function Footer() {
     </footer>
   );
 }
+
+export default Footer;
+

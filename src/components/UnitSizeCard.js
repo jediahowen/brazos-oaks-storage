@@ -27,7 +27,7 @@ export default function UnitSizeCard({ unit }) {
         </ul>
       </div>
       <div className={styles.footer}>
-        <CTAButton href="/rent/" className={styles.button}>
+        <CTAButton href="https://www.brazosoaksstorage.com/sites" className={styles.button}>
           Reserve This Size
         </CTAButton>
       </div>

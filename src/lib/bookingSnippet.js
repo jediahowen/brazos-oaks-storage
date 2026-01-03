@@ -15,5 +15,5 @@ export const BOOKING_SNIPPET_HTML = `
 </div>
 `;
 
-export const EXTERNAL_BOOKING_URL = "https://your-booking-provider.com/reserve";
+export const EXTERNAL_BOOKING_URL = "https://www.brazosoaksstorage.com/sites";
 

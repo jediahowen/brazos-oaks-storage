@@ -116,7 +116,7 @@ export default function About() {
             Reserve your unit online or give us a call. We're here to help you find the perfect storage solution.
           </p>
           <div className={styles.ctaButtons}>
-            <CTAButton href="/rent/">Reserve a Unit</CTAButton>
+            <CTAButton href="https://www.brazosoaksstorage.com/sites">Reserve a Unit</CTAButton>
             <CTAButton href="tel:+12547445127" variant="phone">
               Call (254) 744-5127
             </CTAButton>

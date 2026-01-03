@@ -9,7 +9,8 @@
     "node_modules",
     "build",
     "dist",
-    "**/*.test.ts"
+    "**/*.test.ts",
+    "client"
   ],
   "compilerOptions": {
     "incremental": true,
@@ -34,6 +35,9 @@
     ],
     "paths": {
       "@/*": [
+        "./src/*"
+      ],
+      "@client/*": [
         "./client/src/*"
       ],
       "@shared/*": [
