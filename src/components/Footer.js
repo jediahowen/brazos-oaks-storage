@@ -87,11 +87,11 @@ export default function Footer() {
                   );
                 }
                 return (
-                  <li key={link.href}>
-                    <Link href={link.href} className={styles.link}>
-                      {link.label}
-                    </Link>
-                  </li>
+                <li key={link.href}>
+                  <Link href={link.href} className={styles.link}>
+                    {link.label}
+                  </Link>
+                </li>
                 );
               })}
             </ul>

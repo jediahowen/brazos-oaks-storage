@@ -4,8 +4,7 @@
   margin: 0;
 }
 
-:root {
-  /* Brand Colors */
+:root {  /* Brand Colors */
   --color-primary: 12 25% 45%; /* #835852 - Primary Brand Color */
   --color-primary-hover: 12 25% 38%; /* Darker for hover */
   --color-cta: 18 63% 66%; /* #DA8B64 - Primary CTA Color */
@@ -30,6 +29,28 @@
   --muted: 0 0% 96%;
   --muted-foreground: 0 10% 35%; /* Dark red-gray for muted text */
   --border: 0 0% 90%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Keep brand colors but adjust for dark mode */
+    --color-background: 0 10% 8%; /* Very dark background */
+    
+    /* Semantic Colors for Dark Mode */
+    --background: var(--color-background);
+    --foreground: 0 0% 95%; /* Light text for dark background */
+    --card: 0 10% 12%; /* Slightly lighter than background */
+    --card-foreground: 0 0% 95%; /* Light text on cards */
+    --primary: var(--color-primary); /* Keep brand color */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: var(--color-cta-secondary); /* Keep secondary CTA */
+    --secondary-foreground: 0 0% 100%; /* White text on secondary */
+    --accent: var(--color-accent); /* Keep accent color */
+    --accent-foreground: 0 15% 8%; /* Dark text on accent */
+    --muted: 0 10% 15%;
+    --muted-foreground: 0 0% 70%; /* Lighter muted text for dark mode */
+    --border: 0 10% 20%; /* Darker borders for dark mode */
+  }
 }
 
 body {

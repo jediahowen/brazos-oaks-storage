@@ -141,7 +141,7 @@
 
 @media (prefers-color-scheme: dark) {
   .mobileMenu {
-    background: rgba(0, 0, 0, 0.98);
+    background: hsl(var(--card));
   }
 }
 
