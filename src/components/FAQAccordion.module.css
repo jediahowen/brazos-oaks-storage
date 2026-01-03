@@ -1,0 +1,66 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background-color 0.2s;
+}
+
+.item.open {
+  background: hsl(var(--card));
+}
+
+.trigger {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.trigger:hover {
+  background: hsl(var(--accent));
+}
+
+.trigger:focus {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: -2px;
+}
+
+.question {
+  flex: 1;
+}
+
+.icon {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  color: hsl(var(--muted-foreground));
+}
+
+.item.open .icon {
+  transform: rotate(180deg);
+}
+
+.content {
+  padding: 0 1.5rem 1rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+}
+
+.answer {
+  margin: 0;
+}
+
