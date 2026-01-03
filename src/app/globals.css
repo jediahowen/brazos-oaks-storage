@@ -5,37 +5,31 @@
 }
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --primary: 221.2 83.2% 53.3%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --border: 214.3 31.8% 91.4%;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --border: 217.2 32.6% 17.5%;
-  }
+  /* Brand Colors */
+  --color-primary: 12 25% 45%; /* #835852 - Primary Brand Color */
+  --color-primary-hover: 12 25% 38%; /* Darker for hover */
+  --color-cta: 18 63% 66%; /* #DA8B64 - Primary CTA Color */
+  --color-cta-hover: 18 63% 58%; /* Darker for hover */
+  --color-cta-secondary: 207 87% 61%; /* #41A2F4 - Secondary CTA Color */
+  --color-cta-secondary-hover: 207 87% 53%; /* Darker for hover */
+  --color-accent: 38 90% 67%; /* #F7B55B - Accent/Highlight Color */
+  --color-accent-hover: 38 90% 60%; /* Darker for hover */
+  --color-background: 0 0% 100%; /* #FFFFFF - Primary Background */
+  
+  /* Semantic Colors */
+  --background: var(--color-background);
+  --foreground: 0 15% 8%; /* Very dark red, almost black */
+  --card: var(--color-background);
+  --card-foreground: 0 15% 8%; /* Very dark red, almost black */
+  --primary: var(--color-primary);
+  --primary-foreground: 0 0% 100%; /* White text on primary */
+  --secondary: var(--color-cta-secondary);
+  --secondary-foreground: 0 0% 100%; /* White text on secondary */
+  --accent: var(--color-accent);
+  --accent-foreground: 0 15% 8%; /* Very dark red text on accent */
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 10% 35%; /* Dark red-gray for muted text */
+  --border: 0 0% 90%;
 }
 
 body {

@@ -1,6 +1,7 @@
 .footer {
-  background: hsl(var(--card));
-  border-top: 1px solid hsl(var(--border));
+  background: hsl(var(--color-primary));
+  border-top: 1px solid hsl(var(--color-primary-hover));
+  color: hsl(0 0% 100%);
 }
 
 .container {
@@ -60,11 +61,11 @@
 .logoSubtitle {
   font-size: 0.75rem;
   line-height: 1.2;
-  color: hsl(var(--muted-foreground));
+  color: hsl(0 0% 90%);
 }
 
 .description {
-  color: hsl(var(--muted-foreground));
+  color: hsl(0 0% 90%);
   margin-bottom: 1.5rem;
 }
 
@@ -84,11 +85,11 @@
 }
 
 .contactItem:hover {
-  color: hsl(var(--primary));
+  color: hsl(var(--color-accent));
 }
 
 .contactItem svg {
-  color: hsl(var(--primary));
+  color: hsl(var(--color-accent));
   flex-shrink: 0;
 }
 
@@ -102,7 +103,7 @@
 }
 
 .sectionTitle svg {
-  color: hsl(var(--primary));
+  color: hsl(var(--color-accent));
 }
 
 .links {
@@ -113,13 +114,13 @@
 }
 
 .link {
-  color: hsl(var(--muted-foreground));
+  color: hsl(0 0% 90%);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .link:hover {
-  color: hsl(var(--foreground));
+  color: hsl(var(--color-accent));
 }
 
 .hours {
@@ -136,7 +137,7 @@
 }
 
 .hourDay {
-  color: hsl(var(--muted-foreground));
+  color: hsl(0 0% 85%);
 }
 
 .hourTime {
@@ -144,11 +145,11 @@
 }
 
 .copyright {
-  border-top: 1px solid hsl(var(--border));
+  border-top: 1px solid hsl(var(--color-primary-hover));
   margin-top: 3rem;
   padding-top: 2rem;
   text-align: center;
   font-size: 0.875rem;
-  color: hsl(var(--muted-foreground));
+  color: hsl(0 0% 85%);
 }
 

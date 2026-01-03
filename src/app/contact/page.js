@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import CTAButton from '@/components/CTAButton';
 import { trackContactSubmit } from '@/lib/analytics';
+import { emailjsConfig, isEmailJSConfigured } from '@/lib/emailjs';
 import styles from './page.module.css';
 
 export default function Contact() {
@@ -14,17 +16,57 @@ export default function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+    setIsSubmitting(true);
     trackContactSubmit();
-    // In a real app, you'd send this to a backend
-    // For static export, we'll just show a success message
-    setSubmitted(true);
-    setTimeout(() => {
+
+    // Check if EmailJS is configured
+    if (!isEmailJSConfigured()) {
+      setError('Email service is not configured. Please contact us directly at (254) 744-5127 or info@brazosoaksstorage.com');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Initialize EmailJS with public key
+      emailjs.init(emailjsConfig.publicKey);
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        unit_size: formData.unitSize || 'Not specified',
+        message: formData.message,
+        to_email: 'info@brazosoaksstorage.com', // Your email address
+      };
+
+      // Send email via EmailJS
+      await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        templateParams
+      );
+
+      // Success - show success message
+      setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', unitSize: '', message: '' });
-      setSubmitted(false);
-    }, 5000);
+      
+      // Reset form after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (err) {
+      console.error('EmailJS Error:', err);
+      setError('Failed to send message. Please try again or contact us directly at (254) 744-5127.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -137,6 +179,16 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className={styles.form}>
+                  {error && (
+                    <div className={styles.error}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                      <p>{error}</p>
+                    </div>
+                  )}
                   <div className={styles.formGroup}>
                     <label htmlFor="name" className={styles.label}>
                       Name *
@@ -211,8 +263,12 @@ export default function Contact() {
                       className={styles.textarea}
                     />
                   </div>
-                  <button type="submit" className={styles.submitButton}>
-                    Send Message
+                  <button 
+                    type="submit" 
+                    className={styles.submitButton}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               )}
@@ -227,7 +283,7 @@ export default function Contact() {
           <p className={styles.ctaText}>
             Check availability and reserve your unit online in just a few minutes.
           </p>
-          <CTAButton href="/rent/">Reserve a Unit</CTAButton>
+          <CTAButton href="https://www.brazosoaksstorage.com/sites">Reserve a Unit</CTAButton>
         </div>
       </section>
     </>

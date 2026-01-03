@@ -8,6 +8,7 @@ A fast, lightweight marketing website for Brazos Oaks Storage built with Next.js
 - ✅ Static export (no server runtime required)
 - ✅ Mobile-first, responsive design
 - ✅ Google Tag Manager integration
+- ✅ EmailJS contact form integration
 - ✅ Booking snippet embed on /rent page
 - ✅ Lightweight CSS modules (no heavy UI frameworks)
 - ✅ SEO optimized with metadata per page
@@ -35,15 +36,23 @@ A fast, lightweight marketing website for Brazos Oaks Storage built with Next.js
 npm install
 ```
 
-2. Set up environment variables (optional):
+2. Set up environment variables:
 ```bash
 cp .env.example .env.local
 ```
 
-Edit `.env.local` and add your Google Tag Manager ID:
+Edit `.env.local` and add your configuration:
 ```
+# Google Tag Manager (optional)
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+
+# EmailJS Configuration (required for contact form)
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 ```
+
+See `EMAILJS_SETUP.md` for detailed EmailJS setup instructions.
 
 3. Run the development server:
 ```bash
